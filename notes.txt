@@ -1,0 +1,14 @@
+Install oh-my-posh
+!
+Create a directory for themes
+!
+Add themes to directory
+!
+Update the shell in ~/.zshrc
+-- eval "$(oh-my-posh init zsh --config ~/.config/ohmyposh-themes/bdp-p10k-test.omp.json)"
+Adding --config {PATH} will specify the theme. Default theme will load if --config is not loaded.
+!
+How to fix "command not found" and oh-my-posh not loading at shell startup:
+-- Add homebrew to the path
+-- Edit ~/.zshrc
+-- Add: export PATH=/opt/homebrew/bin:$PATH 
