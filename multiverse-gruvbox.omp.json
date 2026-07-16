@@ -1,0 +1,131 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "blocks": [
+    {
+      "alignment": "left",
+      "segments": [
+        {
+          "background": "#C94B45",
+          "foreground": "#FFFFFF",
+          "leading_diamond": "\ue0b6",
+          "style": "diamond",
+          "template": " \uf007 {{ .UserName }} ",
+          "trailing_diamond": "\ue0b4",
+          "type": "session"
+        },
+        {
+          "background": "#C8953F",
+          "foreground": "#FFFFFF",
+          "leading_diamond": " \ue0b6",
+          "properties": {
+            "style": "mixed"
+          },
+          "style": "diamond",
+          "template": "\ue5ff {{ .Path }}",
+          "trailing_diamond": "\ue0b4",
+          "type": "path"
+        },
+        {
+          "background": "#64A394",
+          "foreground": "#FFFFFF",
+          "leading_diamond": " \ue0b6",
+          "properties": {
+            "branch_template": "{{ trunc 25 .Branch }}",
+            "fetch_status": true,
+            "fetch_upstream_icon": true
+          },
+          "style": "diamond",
+          "template": " {{ .UpstreamIcon }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} \ueb4b {{ .StashCount }}{{ end }} ",
+          "trailing_diamond": "\ue0b4",
+          "type": "git"
+        },
+        {
+          "background": "#C66F89",
+          "foreground": "#FFFFFF",
+          "leading_diamond": " \ue0b6",
+          "properties": {
+            "display_mode": "files",
+            "fetch_package_manager": true,
+            "fetch_version": true
+          },
+          "style": "diamond",
+          "template": " \ue718 {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} ",
+          "trailing_diamond": "\ue0b4",
+          "type": "node"
+        },
+        {
+          "background": "#C66F89",
+          "foreground": "#FFFFFF",
+          "leading_diamond": " \ue0b6",
+          "properties": {
+            "display_mode": "files",
+            "fetch_version": true
+          },
+          "style": "diamond",
+          "template": " \ue62b {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} ",
+          "trailing_diamond": "\ue0b4",
+          "type": "crystal"
+        },
+        {
+          "background": "#C66F89",
+          "foreground": "#FFFFFF",
+          "leading_diamond": " \ue0b6",
+          "properties": {
+            "display_mode": "files",
+            "fetch_version": true
+          },
+          "style": "diamond",
+          "template": " \ue791 {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} ",
+          "trailing_diamond": "\ue0b4",
+          "type": "ruby"
+        },
+        {
+          "background": "#C66F89",
+          "foreground": "#FFFFFF",
+          "leading_diamond": " \ue0b6",
+          "properties": {
+            "display_mode": "context",
+            "fetch_virtual_env": false
+          },
+          "style": "diamond",
+          "template": " \ue235 {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} ",
+          "trailing_diamond": "\ue0b4",
+          "type": "python"
+        },
+        {
+          "background": "#6E5E52",
+          "foreground": "#FFFFFF",
+          "leading_diamond": " \ue0b6",
+          "properties": {
+            "time_format": "15:04"
+          },
+          "style": "diamond",
+          "template": " \uf017 {{ .CurrentDate | date .Format }} ",
+          "trailing_diamond": "\ue0b4",
+          "type": "time"
+        },
+        {
+          "foreground": "#C94B45",
+          "style": "plain",
+          "template": "x ",
+          "type": "status"
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "foreground": "#98AA48",
+          "style": "plain",
+          "template": "\u276f ",
+          "type": "text"
+        }
+      ],
+      "type": "prompt"
+    }
+  ],
+  "version": 4
+}
